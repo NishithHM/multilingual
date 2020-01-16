@@ -3,7 +3,7 @@ import React from 'react';
 import { StyleSheet, Image, Text, View } from 'react-native';
 import Touchable from 'react-native-platform-touchable';
 import LanguageContext from "../context"
-import get from 'lodash/get'
+// import get from 'lodash/get'
 // import { Ionicons } from '@expo/vector-icons';
 
 export default class ExpoLinksScreen extends React.Component {
@@ -13,7 +13,7 @@ export default class ExpoLinksScreen extends React.Component {
      {(context) => {
       return( 
       <View>
-        <Text style={styles.optionsTitleText}>{get(context,"links.resource")}</Text>
+        <Text style={styles.optionsTitleText}>{context.links.resource}</Text>
 
         <Touchable
           style={styles.option}
@@ -29,7 +29,7 @@ export default class ExpoLinksScreen extends React.Component {
               />
             </View>
             <View style={styles.optionTextContainer}>
-              <Text style={styles.optionText}>{get(context,"links.read")}</Text>
+              <Text style={styles.optionText}>{context.links.read}</Text>
             </View>
           </View>
         </Touchable>
@@ -43,7 +43,7 @@ export default class ExpoLinksScreen extends React.Component {
               {/* <Ionicons name="ios-chatboxes" size={22} color="#ccc" /> */}
             </View>
             <View style={styles.optionTextContainer}>
-              <Text style={styles.optionText}>{get(context,"links.ask")}</Text>
+              <Text style={styles.optionText}>{context.links.ask}</Text>
             </View>
           </View>
         </Touchable>

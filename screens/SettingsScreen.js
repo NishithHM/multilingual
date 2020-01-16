@@ -1,7 +1,7 @@
 import React,{useEffect, useState} from 'react';
 import {Picker, View, Text, StyleSheet} from 'react-native'
 import LanguageContext from "../context";
-import get from 'lodash/get'
+// import get from 'lodash/get'
 export default function SettingsScreen(props) {
   /**
    * Go ahead and delete ExpoConfigView and replace it with your content;
@@ -35,11 +35,11 @@ export default function SettingsScreen(props) {
   <LanguageContext.Consumer>
   {(context)=>
   {
-    const option = [get(context,"settings.English"), get(context,"settings.Kannada"), get(context,"settings.Hindi")] 
+    const option = [context.settings.English, context.settings.Kannada, context.settings.Hindi]
     const selectedLanguage = option[index]
     return(
       <View>
-        <Text style={styles.heading}>{get(context,"settings.changeLang")}</Text>
+        <Text style={styles.heading}>{context.settings.changeLang}</Text>
         <Picker
         selectedValue={selectedLanguage}
         style={{height: 50, width: 130}}

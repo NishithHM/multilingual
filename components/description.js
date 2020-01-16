@@ -5,7 +5,7 @@ import {
   StyleSheet
 } from "react-native";
 import LanguageContext from "../context";
-import get from 'lodash/get'
+// import get from 'lodash/get'
 
 export default Description=(props)=>{
     const {desc} = props
@@ -14,7 +14,7 @@ export default Description=(props)=>{
         <LanguageContext.Consumer>
         {(context)=>(
             <View style={container}>
-            <Text style={heading}>{get(context,"list.desc")}</Text>
+            <Text style={heading}>{context.list.desc}</Text>
             <Text style={text}>{desc}</Text>
         </View>
         )}

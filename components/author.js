@@ -5,7 +5,6 @@ import {
   StyleSheet
 } from "react-native";
 import LanguageContext from "../context";
-import get from 'lodash/get'
 
 export default Author=(props)=>{
     const {author} = props
@@ -14,7 +13,7 @@ export default Author=(props)=>{
         <LanguageContext.Consumer>
         {(context)=>(
         <View style={container}>
-            <Text style={heading}>{get(context,"list.author")}</Text>
+            <Text style={heading}>{context.list.author}</Text>
             <Text style={text}>{author}</Text>
         </View>
         )}

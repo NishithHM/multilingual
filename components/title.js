@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import LanguageContext from "../context";
-import get from 'lodash/get'
+// import get from 'lodash/get'
 
 export default Title = props => {
   const { title } = props;
@@ -11,7 +11,7 @@ export default Title = props => {
       {context => {
         return (
           <View style={container}>
-            <Text style={heading}>{get(context,"list.title")}</Text>
+            <Text style={heading}>{context.list.title}</Text>
             <Text style={text}>{title}</Text>
           </View>
         );

@@ -10,7 +10,7 @@ import {
   TouchableOpacity,
   View
 } from "react-native";
-import get from 'lodash/get'
+// import get from 'lodash/get'
 
 import { MonoText } from "../components/StyledText";
 
@@ -38,7 +38,7 @@ export default function HomeScreen() {
           <View style={styles.getStartedContainer}>
             <DevelopmentModeNotice context = {context}/>
 
-            <Text style={styles.getStartedText}>{get(context,"home.startNotice")}</Text>
+            <Text style={styles.getStartedText}>{context.home.startNotice}</Text>
 
             <View
               style={[styles.codeHighlightContainer, styles.homeScreenFilename]}
@@ -47,14 +47,14 @@ export default function HomeScreen() {
             </View>
 
             <Text style={styles.getStartedText}>
-              {get(context,"home.instruction")}
+              {context.home.instruction}
             </Text>
           </View>
 
           <View style={styles.helpContainer}>
             <TouchableOpacity onPress={handleHelpPress} style={styles.helpLink}>
               <Text style={styles.helpLinkText}>
-                {get(context,"home.help")}
+                {context.home.help}
               </Text>
             </TouchableOpacity>
           </View>
@@ -62,7 +62,7 @@ export default function HomeScreen() {
 
         <View style={styles.tabBarInfoContainer}>
           <Text style={styles.tabBarInfoText}>
-            {get(context,"home.tabBar")}
+            {context.home.tabBar}
           </Text>
 
           <View
@@ -84,13 +84,13 @@ function DevelopmentModeNotice(props) {
   if (__DEV__) {
     const learnMoreButton = (
       <Text onPress={handleLearnMorePress} style={styles.helpLinkText}>
-        {get(props.context,"home.learnMore")}
+        {props.context.home.learnMore}
       </Text>
     );
 
     return (
       <Text style={styles.developmentModeText}>
-        {get(props.context,"home.devMsg")} {learnMoreButton}
+        {props.context.home.devMsg} {learnMoreButton}
       </Text>
     );
   } else {
