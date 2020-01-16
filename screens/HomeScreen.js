@@ -81,7 +81,7 @@ export default function HomeScreen() {
 
 
 function DevelopmentModeNotice(props) {
-  if (__DEV__) {
+  // if (true) {
     const learnMoreButton = (
       <Text onPress={handleLearnMorePress} style={styles.helpLinkText}>
         {props.context.home.learnMore}
@@ -93,13 +93,6 @@ function DevelopmentModeNotice(props) {
         {props.context.home.devMsg} {learnMoreButton}
       </Text>
     );
-  } else {
-    return (
-      <Text style={styles.developmentModeText}>
-        You are not in development mode: your app will run at full speed.
-      </Text>
-    );
-  }
 }
 
 function handleLearnMorePress() {
