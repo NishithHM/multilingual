@@ -1,7 +1,6 @@
 import * as WebBrowser from 'expo-web-browser';
 import React from 'react';
-import { StyleSheet, Image, Text, View } from 'react-native';
-import Touchable from 'react-native-platform-touchable';
+import { StyleSheet, Image, Text, View, TouchableOpacity } from 'react-native';
 import LanguageContext from "../context"
 // import get from 'lodash/get'
 // import { Ionicons } from '@expo/vector-icons';
@@ -15,9 +14,8 @@ export default class ExpoLinksScreen extends React.Component {
       <View>
         <Text style={styles.optionsTitleText}>{context.links.resource}</Text>
 
-        <Touchable
+        <TouchableOpacity
           style={styles.option}
-          background={Touchable.Ripple('#ccc', false)}
           onPress={this._handlePressDocs}>
           <View style={{ flexDirection: 'row' }}>
             <View style={styles.optionIconContainer}>
@@ -32,11 +30,10 @@ export default class ExpoLinksScreen extends React.Component {
               <Text style={styles.optionText}>{context.links.read}</Text>
             </View>
           </View>
-        </Touchable>
+        </TouchableOpacity>
 
-        <Touchable
+        <TouchableOpacity
           style={styles.option}
-          background={Touchable.Ripple('#ccc', false)}
           onPress={this._handlePressForums}>
           <View style={{ flexDirection: 'row' }}>
             <View style={styles.optionIconContainer}>
@@ -46,7 +43,7 @@ export default class ExpoLinksScreen extends React.Component {
               <Text style={styles.optionText}>{context.links.ask}</Text>
             </View>
           </View>
-        </Touchable>
+        </TouchableOpacity>
       </View>
       )}}
      </LanguageContext.Consumer> 
